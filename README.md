@@ -56,5 +56,5 @@ Getting Started
 ----
 There are several .sln files in the repository. You can use them in Visual Studio 2012 or MonoDevelop. You can either open the solution for the particular platform that you want to work with first (such as SpinnakeMac.sln to work on Mac OS X, or SpinnakerWindows.sln to work with WPF and WinForms on Windows, etc.), or you can open SpinnakerAllPlatforms.sln to work with all of them at once. Note that you can only build WPF on Windows with Visual Studio and you can only build Mac with MonoMac on a Mac. So either way, when using the AllPlatforms solution, you will only be able to build the subset that is possible on one build machine. You will also receive notifications from Visual Studio or MonoDevelop that some projects aren't supported.
 
-All of the solutions include a sample application for each platform. The sample demonstrates all of Spinnaker's features.
+All of the solutions include a sample application for each platform. The sample demonstrates most of Spinnaker's features.
  
