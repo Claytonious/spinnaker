@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{03DB0493-A5E0-469E-81AA-EAAF9AA544CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApplication.Core", "SampleApplication\SampleApplication.Core\SampleApplication.Core.csproj", "{0A27B4E0-BE58-478B-A7F8-5CE3CC98EE79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinnaker.Sample.iPad", "SampleApplication\Spinnaker.Sample.iPad\Spinnaker.Sample.iPad.csproj", "{AA95C124-239B-4497-9B5F-E1C1AB55E2C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinnaker.Bridge.MonoTouch", "Spinnaker.Bridge.MonoTouch\Spinnaker.Bridge.MonoTouch.csproj", "{20D4AB58-0AD1-461C-AABC-C2AA6AA30B4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinnaker.Core.MonoTouch", "Spinnaker.Core.MonoTouch\Spinnaker.Core.MonoTouch.csproj", "{100DB815-8E96-4511-AE48-5F61D5C24BA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DebugMac|iPhone = DebugMac|iPhone
+		DebugMac|iPhoneSimulator = DebugMac|iPhoneSimulator
+		ReleaseMac|iPhone = ReleaseMac|iPhone
+		ReleaseMac|iPhoneSimulator = ReleaseMac|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A27B4E0-BE58-478B-A7F8-5CE3CC98EE79}.DebugMac|iPhone.ActiveCfg = DebugMac|Any CPU
+		{0A27B4E0-BE58-478B-A7F8-5CE3CC98EE79}.DebugMac|iPhone.Build.0 = DebugMac|Any CPU
+		{0A27B4E0-BE58-478B-A7F8-5CE3CC98EE79}.DebugMac|iPhoneSimulator.ActiveCfg = DebugMac|Any CPU
+		{0A27B4E0-BE58-478B-A7F8-5CE3CC98EE79}.DebugMac|iPhoneSimulator.Build.0 = DebugMac|Any CPU
+		{0A27B4E0-BE58-478B-A7F8-5CE3CC98EE79}.ReleaseMac|iPhone.ActiveCfg = ReleaseMac|Any CPU
+		{0A27B4E0-BE58-478B-A7F8-5CE3CC98EE79}.ReleaseMac|iPhone.Build.0 = ReleaseMac|Any CPU
+		{0A27B4E0-BE58-478B-A7F8-5CE3CC98EE79}.ReleaseMac|iPhoneSimulator.ActiveCfg = ReleaseMac|Any CPU
+		{0A27B4E0-BE58-478B-A7F8-5CE3CC98EE79}.ReleaseMac|iPhoneSimulator.Build.0 = ReleaseMac|Any CPU
+		{100DB815-8E96-4511-AE48-5F61D5C24BA1}.DebugMac|iPhone.ActiveCfg = Debug|Any CPU
+		{100DB815-8E96-4511-AE48-5F61D5C24BA1}.DebugMac|iPhone.Build.0 = Debug|Any CPU
+		{100DB815-8E96-4511-AE48-5F61D5C24BA1}.DebugMac|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{100DB815-8E96-4511-AE48-5F61D5C24BA1}.DebugMac|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{100DB815-8E96-4511-AE48-5F61D5C24BA1}.ReleaseMac|iPhone.ActiveCfg = Release|Any CPU
+		{100DB815-8E96-4511-AE48-5F61D5C24BA1}.ReleaseMac|iPhone.Build.0 = Release|Any CPU
+		{100DB815-8E96-4511-AE48-5F61D5C24BA1}.ReleaseMac|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{100DB815-8E96-4511-AE48-5F61D5C24BA1}.ReleaseMac|iPhoneSimulator.Build.0 = Release|Any CPU
+		{20D4AB58-0AD1-461C-AABC-C2AA6AA30B4A}.DebugMac|iPhone.ActiveCfg = Debug|Any CPU
+		{20D4AB58-0AD1-461C-AABC-C2AA6AA30B4A}.DebugMac|iPhone.Build.0 = Debug|Any CPU
+		{20D4AB58-0AD1-461C-AABC-C2AA6AA30B4A}.DebugMac|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{20D4AB58-0AD1-461C-AABC-C2AA6AA30B4A}.DebugMac|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{20D4AB58-0AD1-461C-AABC-C2AA6AA30B4A}.ReleaseMac|iPhone.ActiveCfg = Release|Any CPU
+		{20D4AB58-0AD1-461C-AABC-C2AA6AA30B4A}.ReleaseMac|iPhone.Build.0 = Release|Any CPU
+		{20D4AB58-0AD1-461C-AABC-C2AA6AA30B4A}.ReleaseMac|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{20D4AB58-0AD1-461C-AABC-C2AA6AA30B4A}.ReleaseMac|iPhoneSimulator.Build.0 = Release|Any CPU
+		{AA95C124-239B-4497-9B5F-E1C1AB55E2C0}.DebugMac|iPhone.ActiveCfg = Debug|iPhone
+		{AA95C124-239B-4497-9B5F-E1C1AB55E2C0}.DebugMac|iPhone.Build.0 = Debug|iPhone
+		{AA95C124-239B-4497-9B5F-E1C1AB55E2C0}.DebugMac|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{AA95C124-239B-4497-9B5F-E1C1AB55E2C0}.DebugMac|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{AA95C124-239B-4497-9B5F-E1C1AB55E2C0}.ReleaseMac|iPhone.ActiveCfg = Debug|iPhone
+		{AA95C124-239B-4497-9B5F-E1C1AB55E2C0}.ReleaseMac|iPhone.Build.0 = Debug|iPhone
+		{AA95C124-239B-4497-9B5F-E1C1AB55E2C0}.ReleaseMac|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{AA95C124-239B-4497-9B5F-E1C1AB55E2C0}.ReleaseMac|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0A27B4E0-BE58-478B-A7F8-5CE3CC98EE79} = {03DB0493-A5E0-469E-81AA-EAAF9AA544CE}
+		{AA95C124-239B-4497-9B5F-E1C1AB55E2C0} = {03DB0493-A5E0-469E-81AA-EAAF9AA544CE}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = SampleApplication\Spinnaker.Sample.iPad\Spinnaker.Sample.iPad.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

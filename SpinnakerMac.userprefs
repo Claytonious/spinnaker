@@ -1,0 +1,46 @@
+﻿<Properties MonoDevelop.MonoMac.LastXamMacNagTime="6/28/2013 7:13:00 PM">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="DebugMac" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Samples" expanded="True" />
+          <Node name="Tests" expanded="True">
+            <Node name="Spinnaker.Bridge.Tests" expanded="True" />
+            <Node name="Spinnaker.Core.Tests" expanded="True">
+              <Node name="BrowserBridgeTests.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True">
+          <Node name="Tests" expanded="True">
+            <Node name="Spinnaker.Core.Tests" expanded="True">
+              <Node name="Spinnaker" expanded="True">
+                <Node name="Core" expanded="True">
+                  <Node name="Tests" expanded="True">
+                    <Node name="BrowserBridgeTests" expanded="True">
+                      <Node name="TestInstanceTracking" selected="True" />
+                    </Node>
+                    <Node name="ConfigurationTests" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

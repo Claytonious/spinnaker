@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{100DB815-8E96-4511-AE48-5F61D5C24BA1}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Spinnaker.Core.MonoTouch</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Spinnaker.Core.MonoTouch</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="Newtonsoft.Json.MonoTouch">
+      <HintPath>..\lib\Newtonsoft.Json.4.5.11\MonoTouch\Newtonsoft.Json.MonoTouch.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="..\Spinnaker.Core\BrowserBridge.cs">
+      <Link>BrowserBridge.cs</Link>
+    </Compile>
+    <Compile Include="..\Spinnaker.Core\SpinnakerConfiguration.cs">
+      <Link>SpinnakerConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Spinnaker.Core\SpinnakerLogLevel.cs">
+      <Link>SpinnakerLogLevel.cs</Link>
+    </Compile>
+    <Compile Include="..\Spinnaker.Core\ViewModelDefinition.cs">
+      <Link>ViewModelDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\Spinnaker.Core\ViewModelInstance.cs">
+      <Link>ViewModelInstance.cs</Link>
+    </Compile>
+    <Compile Include="..\Spinnaker.Core\ViewModelManager.cs">
+      <Link>ViewModelManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Spinnaker.Core\Binding.cs">
+      <Link>Binding.cs</Link>
+    </Compile>
+    <Compile Include="..\Spinnaker.Core\Observable.cs">
+      <Link>Observable.cs</Link>
+    </Compile>
+    <Compile Include="..\Spinnaker.Core\ViewModel.cs">
+      <Link>ViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Spinnaker.Core\ViewModelBinding.cs">
+      <Link>ViewModelBinding.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA95C124-239B-4497-9B5F-E1C1AB55E2C0}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Spinnaker.Sample.iPad</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>SpinnakerSampleiPad</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchLink>None</MtouchLink>
+    <ConsolePause>False</ConsolePause>
+    <MtouchProfiling>True</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchProfiling>True</MtouchProfiling>
+    <ConsolePause>False</ConsolePause>
+    <MtouchDebug>True</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <BuildIpa>True</BuildIpa>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\css\" />
+    <Folder Include="Views\fonts\" />
+    <Folder Include="Views\img\" />
+    <Folder Include="Views\js\" />
+    <Folder Include="Views\img\profiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Spinnaker.Sample.iPadViewController.cs" />
+    <Compile Include="Spinnaker.Sample.iPadViewController.designer.cs">
+      <DependentUpon>Spinnaker.Sample.iPadViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\SampleApplication.Core\ViewModels\Customer.cs">
+      <Link>ViewModels\Customer.cs</Link>
+    </Compile>
+    <Compile Include="..\SampleApplication.Core\ViewModels\CustomersViewModel.cs">
+      <Link>ViewModels\CustomersViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\SampleApplication.Core\ViewModels\RealtimeViewModel.cs">
+      <Link>ViewModels\RealtimeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\SampleApplication.Core\ViewModels\SimpleFormViewModel.cs">
+      <Link>ViewModels\SimpleFormViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\SampleApplication.Core\ViewModels\SplashViewModel.cs">
+      <Link>ViewModels\SplashViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\SampleApplication.Core\SampleApplication.cs">
+      <Link>SampleApplication.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Spinnaker.Core.MonoTouch\Spinnaker.Core.MonoTouch.csproj">
+      <Project>{100DB815-8E96-4511-AE48-5F61D5C24BA1}</Project>
+      <Name>Spinnaker.Core.MonoTouch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Spinnaker.Bridge.MonoTouch\Spinnaker.Bridge.MonoTouch.csproj">
+      <Project>{20D4AB58-0AD1-461C-AABC-C2AA6AA30B4A}</Project>
+      <Name>Spinnaker.Bridge.MonoTouch</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0000.jpg">
+      <Link>Views\img\profiles\ProfilePicture0000.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0001.jpg">
+      <Link>Views\img\profiles\ProfilePicture0001.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0002.jpg">
+      <Link>Views\img\profiles\ProfilePicture0002.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0003.jpg">
+      <Link>Views\img\profiles\ProfilePicture0003.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0004.jpg">
+      <Link>Views\img\profiles\ProfilePicture0004.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0005.jpg">
+      <Link>Views\img\profiles\ProfilePicture0005.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0006.jpg">
+      <Link>Views\img\profiles\ProfilePicture0006.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0007.jpg">
+      <Link>Views\img\profiles\ProfilePicture0007.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0008.jpg">
+      <Link>Views\img\profiles\ProfilePicture0008.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0009.jpg">
+      <Link>Views\img\profiles\ProfilePicture0009.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0010.jpg">
+      <Link>Views\img\profiles\ProfilePicture0010.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0011.jpg">
+      <Link>Views\img\profiles\ProfilePicture0011.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0012.jpg">
+      <Link>Views\img\profiles\ProfilePicture0012.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0013.jpg">
+      <Link>Views\img\profiles\ProfilePicture0013.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0014.jpg">
+      <Link>Views\img\profiles\ProfilePicture0014.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0015.jpg">
+      <Link>Views\img\profiles\ProfilePicture0015.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0016.jpg">
+      <Link>Views\img\profiles\ProfilePicture0016.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0017.jpg">
+      <Link>Views\img\profiles\ProfilePicture0017.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0018.jpg">
+      <Link>Views\img\profiles\ProfilePicture0018.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0019.jpg">
+      <Link>Views\img\profiles\ProfilePicture0019.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0020.jpg">
+      <Link>Views\img\profiles\ProfilePicture0020.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0021.jpg">
+      <Link>Views\img\profiles\ProfilePicture0021.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0022.jpg">
+      <Link>Views\img\profiles\ProfilePicture0022.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0023.jpg">
+      <Link>Views\img\profiles\ProfilePicture0023.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0024.jpg">
+      <Link>Views\img\profiles\ProfilePicture0024.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0025.jpg">
+      <Link>Views\img\profiles\ProfilePicture0025.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0026.jpg">
+      <Link>Views\img\profiles\ProfilePicture0026.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0027.jpg">
+      <Link>Views\img\profiles\ProfilePicture0027.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0028.jpg">
+      <Link>Views\img\profiles\ProfilePicture0028.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0029.jpg">
+      <Link>Views\img\profiles\ProfilePicture0029.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0030.jpg">
+      <Link>Views\img\profiles\ProfilePicture0030.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0031.jpg">
+      <Link>Views\img\profiles\ProfilePicture0031.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0032.jpg">
+      <Link>Views\img\profiles\ProfilePicture0032.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0033.jpg">
+      <Link>Views\img\profiles\ProfilePicture0033.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0034.jpg">
+      <Link>Views\img\profiles\ProfilePicture0034.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0035.jpg">
+      <Link>Views\img\profiles\ProfilePicture0035.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0036.jpg">
+      <Link>Views\img\profiles\ProfilePicture0036.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0037.jpg">
+      <Link>Views\img\profiles\ProfilePicture0037.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0038.jpg">
+      <Link>Views\img\profiles\ProfilePicture0038.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0039.jpg">
+      <Link>Views\img\profiles\ProfilePicture0039.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0040.jpg">
+      <Link>Views\img\profiles\ProfilePicture0040.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0041.jpg">
+      <Link>Views\img\profiles\ProfilePicture0041.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0042.jpg">
+      <Link>Views\img\profiles\ProfilePicture0042.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0043.jpg">
+      <Link>Views\img\profiles\ProfilePicture0043.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0044.jpg">
+      <Link>Views\img\profiles\ProfilePicture0044.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0045.jpg">
+      <Link>Views\img\profiles\ProfilePicture0045.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0046.jpg">
+      <Link>Views\img\profiles\ProfilePicture0046.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0047.jpg">
+      <Link>Views\img\profiles\ProfilePicture0047.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0048.jpg">
+      <Link>Views\img\profiles\ProfilePicture0048.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0049.jpg">
+      <Link>Views\img\profiles\ProfilePicture0049.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0050.jpg">
+      <Link>Views\img\profiles\ProfilePicture0050.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0051.jpg">
+      <Link>Views\img\profiles\ProfilePicture0051.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0052.jpg">
+      <Link>Views\img\profiles\ProfilePicture0052.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0053.jpg">
+      <Link>Views\img\profiles\ProfilePicture0053.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0054.jpg">
+      <Link>Views\img\profiles\ProfilePicture0054.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0055.jpg">
+      <Link>Views\img\profiles\ProfilePicture0055.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0056.jpg">
+      <Link>Views\img\profiles\ProfilePicture0056.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0057.jpg">
+      <Link>Views\img\profiles\ProfilePicture0057.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0058.jpg">
+      <Link>Views\img\profiles\ProfilePicture0058.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0059.jpg">
+      <Link>Views\img\profiles\ProfilePicture0059.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0060.jpg">
+      <Link>Views\img\profiles\ProfilePicture0060.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0061.jpg">
+      <Link>Views\img\profiles\ProfilePicture0061.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0062.jpg">
+      <Link>Views\img\profiles\ProfilePicture0062.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0063.jpg">
+      <Link>Views\img\profiles\ProfilePicture0063.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0064.jpg">
+      <Link>Views\img\profiles\ProfilePicture0064.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0065.jpg">
+      <Link>Views\img\profiles\ProfilePicture0065.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0066.jpg">
+      <Link>Views\img\profiles\ProfilePicture0066.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0067.jpg">
+      <Link>Views\img\profiles\ProfilePicture0067.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0068.jpg">
+      <Link>Views\img\profiles\ProfilePicture0068.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0069.jpg">
+      <Link>Views\img\profiles\ProfilePicture0069.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0070.jpg">
+      <Link>Views\img\profiles\ProfilePicture0070.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0071.jpg">
+      <Link>Views\img\profiles\ProfilePicture0071.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0072.jpg">
+      <Link>Views\img\profiles\ProfilePicture0072.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0073.jpg">
+      <Link>Views\img\profiles\ProfilePicture0073.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0074.jpg">
+      <Link>Views\img\profiles\ProfilePicture0074.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0075.jpg">
+      <Link>Views\img\profiles\ProfilePicture0075.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0076.jpg">
+      <Link>Views\img\profiles\ProfilePicture0076.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0077.jpg">
+      <Link>Views\img\profiles\ProfilePicture0077.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0078.jpg">
+      <Link>Views\img\profiles\ProfilePicture0078.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0079.jpg">
+      <Link>Views\img\profiles\ProfilePicture0079.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0080.jpg">
+      <Link>Views\img\profiles\ProfilePicture0080.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0081.jpg">
+      <Link>Views\img\profiles\ProfilePicture0081.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0082.jpg">
+      <Link>Views\img\profiles\ProfilePicture0082.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0083.jpg">
+      <Link>Views\img\profiles\ProfilePicture0083.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0084.jpg">
+      <Link>Views\img\profiles\ProfilePicture0084.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0085.jpg">
+      <Link>Views\img\profiles\ProfilePicture0085.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0086.jpg">
+      <Link>Views\img\profiles\ProfilePicture0086.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0087.jpg">
+      <Link>Views\img\profiles\ProfilePicture0087.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0088.jpg">
+      <Link>Views\img\profiles\ProfilePicture0088.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0089.jpg">
+      <Link>Views\img\profiles\ProfilePicture0089.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0090.jpg">
+      <Link>Views\img\profiles\ProfilePicture0090.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0091.jpg">
+      <Link>Views\img\profiles\ProfilePicture0091.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0092.jpg">
+      <Link>Views\img\profiles\ProfilePicture0092.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0093.jpg">
+      <Link>Views\img\profiles\ProfilePicture0093.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0094.jpg">
+      <Link>Views\img\profiles\ProfilePicture0094.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0095.jpg">
+      <Link>Views\img\profiles\ProfilePicture0095.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0096.jpg">
+      <Link>Views\img\profiles\ProfilePicture0096.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0097.jpg">
+      <Link>Views\img\profiles\ProfilePicture0097.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0098.jpg">
+      <Link>Views\img\profiles\ProfilePicture0098.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0099.jpg">
+      <Link>Views\img\profiles\ProfilePicture0099.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0100.jpg">
+      <Link>Views\img\profiles\ProfilePicture0100.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0101.jpg">
+      <Link>Views\img\profiles\ProfilePicture0101.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0102.jpg">
+      <Link>Views\img\profiles\ProfilePicture0102.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0103.jpg">
+      <Link>Views\img\profiles\ProfilePicture0103.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0104.jpg">
+      <Link>Views\img\profiles\ProfilePicture0104.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0105.jpg">
+      <Link>Views\img\profiles\ProfilePicture0105.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0106.jpg">
+      <Link>Views\img\profiles\ProfilePicture0106.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0107.jpg">
+      <Link>Views\img\profiles\ProfilePicture0107.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0108.jpg">
+      <Link>Views\img\profiles\ProfilePicture0108.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0109.jpg">
+      <Link>Views\img\profiles\ProfilePicture0109.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0110.jpg">
+      <Link>Views\img\profiles\ProfilePicture0110.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0111.jpg">
+      <Link>Views\img\profiles\ProfilePicture0111.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0112.jpg">
+      <Link>Views\img\profiles\ProfilePicture0112.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0113.jpg">
+      <Link>Views\img\profiles\ProfilePicture0113.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0114.jpg">
+      <Link>Views\img\profiles\ProfilePicture0114.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0115.jpg">
+      <Link>Views\img\profiles\ProfilePicture0115.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0116.jpg">
+      <Link>Views\img\profiles\ProfilePicture0116.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0117.jpg">
+      <Link>Views\img\profiles\ProfilePicture0117.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0118.jpg">
+      <Link>Views\img\profiles\ProfilePicture0118.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0119.jpg">
+      <Link>Views\img\profiles\ProfilePicture0119.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0120.jpg">
+      <Link>Views\img\profiles\ProfilePicture0120.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\profiles\ProfilePicture0121.jpg">
+      <Link>Views\img\profiles\ProfilePicture0121.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\glyphicons-halflings-white.png">
+      <Link>Views\img\glyphicons-halflings-white.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\glyphicons-halflings.png">
+      <Link>Views\img\glyphicons-halflings.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\hero-bkg.png">
+      <Link>Views\img\hero-bkg.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\HiRes.jpg">
+      <Link>Views\img\HiRes.jpg</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\img\SpinnakerLogo.png">
+      <Link>Views\img\SpinnakerLogo.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\css\bootstrap-responsive.min.css">
+      <Link>Views\css\bootstrap-responsive.min.css</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\css\bootstrap.min.css">
+      <Link>Views\css\bootstrap.min.css</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\fonts\-g5pDUSRgvxvOl5u-a_WHw.woff">
+      <Link>Views\fonts\-g5pDUSRgvxvOl5u-a_WHw.woff</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\fonts\8Hj8G_JpSADPYrRpzMno2hsxEYwM7FgeyaSgU71cLG0.woff">
+      <Link>Views\fonts\8Hj8G_JpSADPYrRpzMno2hsxEYwM7FgeyaSgU71cLG0.woff</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\fonts\cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff">
+      <Link>Views\fonts\cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\fonts\QS5qjU-Gc2sqWEq5kDfWQfesZW2xOQ-xsNqO47m55DA.woff">
+      <Link>Views\fonts\QS5qjU-Gc2sqWEq5kDfWQfesZW2xOQ-xsNqO47m55DA.woff</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\js\Backstretch.js">
+      <Link>Views\js\Backstretch.js</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\js\bootstrap.min.js">
+      <Link>Views\js\bootstrap.min.js</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\js\jquery-1.8.3.min.js">
+      <Link>Views\js\jquery-1.8.3.min.js</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\js\knockout-2.2.0.js">
+      <Link>Views\js\knockout-2.2.0.js</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleApplication.Core\Views\SplashView.html">
+      <Link>Views\SplashView.html</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

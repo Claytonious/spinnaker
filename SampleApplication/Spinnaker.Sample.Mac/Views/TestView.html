@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Test</title>
+	</head>
+	<body>
+		Hi there v4.<br/>
+		<span id="output"></span> <br/>
+		<script src="js/jquery-1.8.3.min.js"></script>		
+		<script type="text/javascript">
+			document.getElementById('output').innerHTML = "foo";
+			$(function() {
+				$('#output').text("And one");
+				window.external.HostLog_("Hello!", "day deuhhh");
+			});
+			
+			function sayHi(msg)
+			{
+				$('#output').text("I said " + msg);			
+			}
+		</script>
+	</body>
+</html>

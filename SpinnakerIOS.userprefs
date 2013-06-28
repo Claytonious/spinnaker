@@ -1,0 +1,23 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="DebugMac|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPad.6.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Spinnaker.Core/ViewModelInstance.cs">
+    <Files>
+      <File FileName="Spinnaker.Core/ViewModelDefinition.cs" Line="1" Column="1" />
+      <File FileName="Spinnaker.Core/ViewModelInstance.cs" Line="160" Column="25" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Samples" expanded="True" />
+          <Node name="Spinnaker.Core.MonoTouch" expanded="True">
+            <Node name="ViewModelInstance.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

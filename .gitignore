@@ -1,0 +1,10 @@
+.DS_Store
+*.user
+*.suo
+*.pdb
+*.exe
+*.mdb
+bin/
+obj/
+test-results/
+

@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<!-- The comment above is necessary to prevent security warnings when running on 
+	 Windows under WPF. If you target Windows, you will probably want this in all 
+	 of your views. For details, see http://msdn.microsoft.com/en-us/library/ms537628(v=VS.85).aspx -->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Spinnaker Sample</title>
+    <!-- This sample application uses Twitter Bootstrap in its design, but this is completely optional.
+         You're welcome to use any HTML/CSS/Javascript frameworks that you like in your GUI. -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+    	body{
+    		padding-top:60px !important;
+    	}
+    </style>    
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+        @font-face {
+          font-family: 'Playball';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Playball'), local('Playball-Regular'), url(fonts/QS5qjU-Gc2sqWEq5kDfWQfesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+        }
+        @font-face {
+          font-family: 'Jockey One';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Jockey One'), local('JockeyOne-Regular'), url(fonts/8Hj8G_JpSADPYrRpzMno2hsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+        }
+        @font-face {
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Open Sans'), local('OpenSans'), url(fonts/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+        }
+        a, a:hover, a:active {
+            outline: none !important;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Jockey One', sans-serif;
+        }
+        label {
+            font-family: 'Open Sans', sans-serif;
+        }
+        input, textarea {
+            font-weight: 600;
+            outline: none !important;
+        }
+        button {
+            outline: none !important;
+        }
+        p, div {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1 { 
+            text-shadow: 2px 2px 4px #777;
+        }
+        .recordSep {
+            border: 0; border-top: 1px solid #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+	    <div class="navbar navbar-fixed-top" style="position: fixed !important;">
+	        <div class="navbar-inner">
+	            <ul class="nav">
+	                <li data-bind="css: { active: CurrentPage()==='SplashPage' }">
+	                    <a href="#" class="active" data-bind="click:GotoSplashPage">Welcome</a>
+	                </li>
+	                <li data-bind="css: { active: CurrentPage()==='RealtimePage' }">
+	                    <a href="#" data-bind="click:GotoRealtimePage">Realtime</a>
+	                </li>
+	                <li data-bind="css: { active: CurrentPage()==='DataPage' }">
+	                    <a href="#" data-bind="click:GotoDataPage">Data</a>
+	                </li>
+	                <li data-bind="css: { active: CurrentPage()==='SimpleFormPage' }">
+	                    <a href="#" data-bind="click:GotoSimpleFormPage">Simple Form</a>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+        <div data-bind="visible: CurrentPage()==='SplashPage'">
+            <div id=hero class="hero-unit">
+                <div style="text-align:right">
+                    <h1 style="font-family: 'Playball', cursive; font-size:80px; text-shadow: 2px 2px 6px #777;">Spinnaker</h1>
+                    <p class="lead">
+                        Welcome to the sample application
+                    </p>
+                </div>
+            </div>
+            <div>
+                <h2>This Sample</h2>
+                <p>Use the navbar at the top to explore different aspects of the sample application. Each page demonstrates a typical use-case for Spinnaker and includes an explanation of its own.</p>
+                <h2>About Spinnaker</h2>
+                <p>
+                    Spinnaker is a cross-platform MVVM framework for C#. It allows you to write simple ViewModels in C# and bind them to HTML GUI. The
+                    binding is accomplished via the knockout.js library, a version of which is bundled with Spinnaker (but you're free to use your own if your prefer).
+                </p>
+                <p>
+                    To expose a ViewModel from your C# application, you simply need to implement the <code>System.INotifyPropertyChanged</code> interface on
+                    any classes that you want to bind to the GUI. You then author the user interface in HTML using any tools you like, using knockout.js semantics for
+                    data bindings.
+                </p>
+                <p>
+                    Once your ViewModels are bound, any time changes are made to them (via business logic, network or hardware events, or anything else in your application's code
+                    that causes properties to be changed), those changes are automatically reflected in the GUI. Likewise, whenever the user interacts with the GUI, your ViewModel
+                    classes on the C# side are notified (their properties are changed and/or their methods are invoked). In your ViewModel classes, you can throw exceptions
+                    to trigger validation errors in the GUI (this is optional behavior).
+                </p>
+                <p>
+                    You don't have to write any Javascript to make all of this happen, outside of the (usually simple) binding expressions to your ViewModels. 
+                    These typically amount to simple attributes in your HTML such as this snippet for a heading: <code>&lt;h1&gt;data-bind="text: MyTitle"&lt;/h1&gt;</code>. However, you can
+                    create more advanced bindings by using more sophisticated Javascript expressions. Also, if you <b>want</b> to add custom javascript in your HTML GUI then you are free to do so.
+                    Spinnaker is content to work alongside any other extra frameworks or logic that you want to use in your HTML.
+                </p>
+                <p>
+                    Spinnaker works on Windows, Mac OS X, and iOS (with MonoTouch). Support is planned for Linux and Android (with MonoDroid). It allows you to reuse your GUI and ViewModels on all of these platforms.                    
+                </p>
+            </div>
+        </div>
+        <div data-bind="visible: CurrentPage()==='RealtimePage'">
+            <div data-bind="with: RealtimeViewModel">
+                <h1>Realtime Updates</h1>
+                <p>
+                    This page demonstrates continuously changing data on the .NET application side being reflected dynamically in the HTML GUI. The ViewModel in C#
+                    is continuously changing the time and the position of the box with a timer. As it makes changes to properties like the time and the position
+                    of the box, the user automatically sees these changed values reflected here in the GUI. Changes like this are also reflected when doing work in other
+                    threads on the .NET side. In this example, we use a timer instead of a thread for smoother animation performance - this keeps our updates on the
+                    GUI thread, which is where they would be marshalled to automatically if modified from our own custom thread. But this automatic marshalling has a cost
+                    that we might as well avoid since we are trying to do smooth animation. This nuance is typically unimportant.
+                </p>
+                <hr />
+                <p>
+                    The current time is <span data-bind="text:CurrentTime"></span>
+                </p>
+                <div style="background:orange;position:absolute;top:300px;left:200px;width:50px;height:50px;" data-bind="visible:IsBoxVisible, style: { top: BoxTop, left: BoxLeft }"></div>
+            </div>
+        </div>
+        <div data-bind="visible: CurrentPage()==='DataPage'">
+            <div data-bind="with: CustomersViewModel">
+                <h1>Data Example</h1>
+                <p>
+                    This is an example of binding to a collection of objects. The view model in this sample has a simple list of "Customer" objects that it exposes as <code>public IEnumerable&lt;Customer&gt; Customers</code>.
+                    This allows us to use <code>data-bind="foreach:Customers"</code> in the HTML markup to define the template for each Customer. we could have used something even simpler like <code>List&lt;Customer&gt;</code>, but we expose our own <code>IEnumerable</code> in this sample in order to support a search filter field.
+                    Spinnaker automatically shows all of the customers in the view model's list, even if the list changes at runtime. Each <code>Customer</code> object in the list is, in turn, a view model of its own, allowing the user to edit these items.
+                    Try editing some values of customers below. Enter some blank or invalid entries to see validation at work.
+                </p>
+                <hr />
+                <div class="row">
+                    <div class="span12">
+                        <div style="display:inline-block;">
+                            <h2 style="margin-top:0px">Customers</h2>
+                        </div>
+                        <div style="display: inline-block;" class="pull-right">
+                            <form class="form-search">
+                                <div class="input-append">
+                                    <input type="text" class="span2 search-query" data-bind="value:FilterText">
+                                    <button type="submit" class="btn" data-bind="click:Filter">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div data-bind="foreach:Customers">
+                    <div class="row">
+                        <div class="span3">
+                            <div style="width:100%">
+                                <img class="img-rounded" style="width:100%" data-bind="attr: { src: ProfilePicture }" />
+                            </div>
+                        </div>
+                        <div class="span9">
+                            <div class="row">
+                                <div class="span3">
+                                    <div class="control-group" data-bind="css: { error: FirstNameValidationError }">
+                                        <label class="control-label" data-bind="attr: { 'for': 'customerFirstName' + $index() }">First Name</label>
+                                        <div class="controls">
+                                            <input class="input-block-level" type="text" data-bind="value:FirstName, valueUpdate: 'afterkeydown', attr: { 'id': 'customerFirstName' + $index() }"/>
+                                            <span class="help-inline" data-bind="text:FirstNameValidationError" style="color:red"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <div class="control-group" data-bind="css: { error: LastNameValidationError }">
+                                        <label class="control-label" data-bind="attr: { 'for': 'customerLastName' + $index() }">Last Name</label>
+                                        <div class="controls">
+                                            <input class="input-block-level" type="text" data-bind="value:LastName, valueUpdate: 'afterkeydown',attr: { 'id': 'customerLastName' + $index() }"/>
+                                            <span class="help-inline" data-bind="text:LastNameValidationError" style="color:red"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <div class="control-group" data-bind="css: { error: EmailValidationError }">
+                                        <label class="control-label" data-bind="attr: { 'for': 'customerEmail' + $index() }">Email</label>
+                                        <div class="controls">
+                                            <input class="input-block-level" type="text" data-bind="value:Email, valueUpdate: 'afterkeydown',attr: { 'id': 'customerEmail' + $index() }"/>
+                                            <span class="help-inline" data-bind="text:EmailValidationError" style="color:red"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="span3">
+                                    <div class="control-group" data-bind="css: { error: AddressValidationError }">
+                                        <label class="control-label" data-bind="attr: { 'for': 'customerAddress' + $index() }">Address</label>
+                                        <div class="controls">
+                                            <input class="input-block-level" type="text" data-bind="value:Address, valueUpdate: 'afterkeydown',attr: { 'id': 'customerAddress' + $index() }"/>
+                                            <span class="help-inline" data-bind="text:AddressValidationError" style="color:red"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <div class="control-group" data-bind="css: { error: BalanceDisplayValidationError }">
+                                        <label class="control-label" data-bind="attr: { 'for': 'customerBalance' + $index() }">Balance</label>
+                                        <div class="controls">
+                                            <input class="input-block-level" type="text" data-bind="value:BalanceDisplay,attr: { 'id': 'customerBalance' + $index() }"/>
+                                            <span class="help-inline" data-bind="text:BalanceDisplayValidationError" style="color:red"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <div style="margin-top:25px">
+                                        <button class="btn btn-primary" data-bind="visible:IsDirty() && !FirstNameValidationError() && !LastNameValidationError() && !EmailValidationError() && !AddressValidationError() && !BalanceDisplayValidationError(), click:Save">Save</button>
+                                        <a data-bind="attr: { 'href': '#confirmDeleteCustomerDialog' + $index() }" role="button" class="btn btn-danger" data-toggle="modal">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-bind="attr: { 'id': 'confirmDeleteCustomerDialog' + $index(), 'aria-labelledby': 'confirmDeleteCustomerDialogLabel' + $index() }" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3 data-bind="attr: { 'id': 'confirmDeleteCustomerDialogLabel' + $index() }">Confirm Delete</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                Are you sure you want to <b>permanently</b> delete customer "<span data-bind="text: FirstName() + ' ' + LastName()"></span>?"
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn" data-dismiss="modal" aria-hidden="true" data-bind="click:function() { setTimeout( function() { $parent.Delete($index()); }, 500 ); return true; }">Yes</button>
+                                <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr style="border: 0; border-top: 1px dashed #BBBBBB;"/>
+                </div>
+            </div>
+        </div>
+        <div data-bind="visible: CurrentPage()==='SimpleFormPage'">
+            <div data-bind="with: SimpleFormViewModel">
+                <h1>Simple Form Input</h1>
+                <p>
+                    This is a bare bones demonstration of binding simple form fields to a C# ViewModel. As you enter values into the form fields,
+                    the ViewModel on the .NET side will update the "current values" property, which is displayed here in the GUI, thus demonstrating
+                    a complete (but simple) round-trip from GUI to ViewModel and back to GUI.
+                </p>
+                <p>
+                    Validation is deliberately not performed on the fields here. To see one way that field validation can be accomplished, see the Data sample.
+                </p>
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend></legend>
+                        <div class="control-group">
+                            <label for="stringProperty" class="control-label">String Property:</label>
+                            <input type="text" id="stringProperty" data-bind="value:StringProperty"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="intProperty" class="control-label">Int Property:</label>
+                            <input type="text" id="intProperty" data-bind="value:IntProperty"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="city" class="control-label">City:</label>
+                            <select id="city" style="width:30em" data-bind="options: CityChoices, value:SelectedCityText"></select>
+                        </div>
+                    </fieldset>
+                </form>
+                <p>
+                    Current values on C# side are:<br />
+                    <span data-bind="text:CurrentValues"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/knockout-2.2.0.js"></script>
+    <script src="js/backstretch.js"></script>
+    <script>
+        $(function () {
+        	setHeroBackground();
+			/*$(window).resize(function () {
+				setHeroBackground();
+			});*/
+        });
+        
+        function setHeroBackground() {
+            $('#hero').backstretch("img/HiRes.jpg");
+        }
+    </script>
+</body>
+</html>
