@@ -45,10 +45,10 @@ Spinnaker already works here:
 + Windows XP/Vista/7/8 in WPF applications
 + Mac OS X 10.6+ in MonoMac applications
 + iOS 6+ in MonoTouch applications
++ Linux with GTK# and webkit-sharp
 
 Support is also planned, but not yet available, for these platforms:
 + Android
-+ Linux
 
 Support isn't planned for anything else at this time, so if you need another platform then feel free to contribute.
 
