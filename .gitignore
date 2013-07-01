@@ -1,4 +1,7 @@
 .DS_Store
+UpgradeLog.XML
+UpgradeLog.htm
+_UpgradeReport_Files/
 *.user
 *.suo
 *.pdb

@@ -14,7 +14,7 @@ namespace Spinnaker.Bridge.Awesomium.WinForms
     {
         private WebControl webControl;
         private Action loadedHandler;
-
+        
         static AwesomiumBrowserBridge()
         {
             defaultViewsPath = Path.Combine(new FileInfo(typeof(AwesomiumBrowserBridge).Assembly.Location).DirectoryName, "Views");
