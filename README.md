@@ -27,7 +27,7 @@ Many of us are still writing "installed applications" - apps that live on the us
 + Use of platform-specific API's or services
 + High performance 3D/Audio applications that can't tolerate the "almost there" state of WebGL and high latency audio of browsers
 
-This is a small sampling of the many reasons you might need to deliver something other than a web application to your users. But as publishers of installed software, it is desirable for us to be able to use all of the richness of modern web interfaces and to take advantage of the abudance of design talent and tooling that serves the HTML market. It is also highly desirable to write our GUI once for all of our target platforms rather than writing a new, native GUI on each of our target platforms.
+This is a small sampling of the many reasons you might need to deliver something other than a web application to your users. But as publishers of installed software, it is desirable for us to be able to use all of the richness of modern web interfaces and to take advantage of the abundance of design talent and tooling that serves the HTML market. It is also highly desirable to write our GUI once for all of our target platforms rather than writing a new, native GUI on each of our target platforms.
 
 Spinnaker allows you to enjoy the benefits of HTML design and tooling whether you are targeting a single platform or multiple.
 
